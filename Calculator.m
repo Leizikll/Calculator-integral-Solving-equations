@@ -79,81 +79,81 @@ varargout{1} = handles.output;
 function buttonSUB_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '-'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '-'];
+set(str,'String',out);
 
 % --- Executes on button press in button4.
 function button4_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '4'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '4'];
+set(str,'String',out);
 
 % --- Executes on button press in button5.
 function button5_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '5'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '5'];
+set(str,'String',out);
 
 % --- Executes on button press in button6.
 function button6_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '6'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '6'];
+set(str,'String',out);
 
 % --- Executes on button press in buttonADD.
 function buttonADD_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '+'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '+'];
+set(str,'String',out);
 
 % --- Executes on button press in button1.
 function button1_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1'); % defining first screen 
                               %(that tag name is out1) as str
-shortstr = get(str,'string'); % gets value from str
-Fstr = [shortstr '1']; % pre. value + "1"
-set(str,'String',Fstr); % writes "1" on screen
+put = get(str,'string'); % gets value from str
+out = [put '1']; % pre. value + "1"
+set(str,'String',out); % writes "1" on screen
 
 % --- Executes on button press in button2.
 function button2_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '2'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '2'];
+set(str,'String',out);
 
 % --- Executes on button press in button3.
 function button3_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '3'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '3'];
+set(str,'String',out);
 
 % --- Executes on button press in buttonEQU.
 function buttonEQU_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr=get(str,'String');
+put=get(str,'String');
 cevap=findobj(gcbf,'Tag','out2');
-shortstr=str2num(shortstr);
-set(cevap,'String',shortstr);
+put=str2num(put);
+set(cevap,'String',put);
 
 % --- Executes on button press in buttonClr.
 function buttonClr_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1'); % defining calc. screen 
-shortstr = get(str,'string');  % getting value from first screen         
+put = get(str,'string');  % getting value from first screen         
 set(str,'String','');
 
 out2=findobj(gcbf,'Tag','out2');
@@ -180,41 +180,41 @@ set(out2,'string',' ');
 function buttonDIV_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '/'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '/'];
+set(str,'String',out);
 
 % --- Executes on button press in button7.
 function button7_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '7'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '7'];
+set(str,'String',out);
 
 % --- Executes on button press in button8.
 function button8_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '8'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '8'];
+set(str,'String',out);
 
 % --- Executes on button press in button9.
 function button9_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '9'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '9'];
+set(str,'String',out);
 
 % --- Executes on button press in buttonMUL.
 function buttonMUL_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '*'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '*'];
+set(str,'String',out);
 
 function out1_Callback(hObject, eventdata, handles)
 
@@ -238,16 +238,16 @@ function buttonP_Callback(hObject, eventdata, handles)
 
 if handles.valuedeger==1
     str=findobj(gcbf,'Tag','out1')
-    Fstr=get(str, 'string')
-    shortstr=[Fstr '(']
-    set(str,'string',shortstr)
+    out=get(str, 'string')
+    put=[out '(']
+    set(str,'string',put)
     handles.valuedeger=0
     guidata(hObject,handles);
 elseif handles.valuedeger==0 % updates valuedeger
     str=findobj(gcbf,'Tag','out1')
-    Fstr=get(str, 'string')
-    shortstr=[Fstr ')']
-    set(str,'string',shortstr)
+    out=get(str, 'string')
+    put=[out ')']
+    set(str,'string',put)
     handles.valuedeger=1
     guidata(hObject,handles); % updates valuedeger
 end
@@ -256,50 +256,50 @@ end
 function button0_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '0'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '0'];
+set(str,'String',out);
 
 % --- Executes on button press in buttonPOINT.
 function buttonPOINT_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '.'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '.'];
+set(str,'String',out);
 
 % --- Executes on button press in pushbutton32.
 function pushbutton32_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '^(-1)'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '^(-1)'];
+set(str,'String',out);
 
 % --- Executes on button press in buttonDE.
 function buttonDE_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-shortstr(end)='';
-Fstr = shortstr;
-set(str,'String',Fstr);
+put = get(str,'string');
+put(end)='';
+out = put;
+set(str,'String',out);
 
 % --- Executes on button press in buttonSQRT.
 function buttonSQRT_Callback(hObject, eventdata, handles)
 
 str=findobj(gcbf,'Tag','out1');
-shortstr = get(str,'string');
-Fstr = [shortstr '^(1/2)'];
-set(str,'String',Fstr);
+put = get(str,'string');
+out = [put '^(1/2)'];
+set(str,'String',out);
 
 % --- Executes on button press in buttonPERCENT.
 function buttonPERCENT_Callback(hObject, eventdata, handles)
 
     str=findobj(gcbf,'Tag','out1');
-    shortstr = get(str,'string');
-    Fstr = [shortstr '/100'];
-    set(str,'String',Fstr);
+    put = get(str,'string');
+    out = [put '/100'];
+    set(str,'String',out);
 
 
 % --- Executes on button press in buttonexp.
@@ -308,9 +308,9 @@ function buttonexp_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
     str=findobj(gcbf,'Tag','out1');
-    shortstr = get(str,'string');
-    Fstr = [shortstr 'exp'];
-    set(str,'String',Fstr);
+    put = get(str,'string');
+    out = [put 'exp'];
+    set(str,'String',out);
 
 % --- Executes on button press in buttonsin.
 function buttonsin_Callback(hObject, eventdata, handles)
@@ -318,9 +318,9 @@ function buttonsin_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
     str=findobj(gcbf,'Tag','out1');
-    shortstr = get(str,'string');
-    Fstr = [shortstr 'sin'];
-    set(str,'String',Fstr);
+    put = get(str,'string');
+    out = [put 'sin'];
+    set(str,'String',out);
     
 % --- Executes on button press in buttoncos.
 function buttoncos_Callback(hObject, eventdata, handles)
@@ -328,9 +328,9 @@ function buttoncos_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
     str=findobj(gcbf,'Tag','out1');
-    shortstr = get(str,'string');
-    Fstr = [shortstr 'cos'];
-    set(str,'String',Fstr);
+    put = get(str,'string');
+    out = [put 'cos'];
+    set(str,'String',out);
 
 % --- Executes on button press in buttontan.
 function buttontan_Callback(hObject, eventdata, handles)
@@ -338,9 +338,9 @@ function buttontan_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
     str=findobj(gcbf,'Tag','out1');
-    shortstr = get(str,'string');
-    Fstr = [shortstr 'tan'];
-    set(str,'String',Fstr);
+    put = get(str,'string');
+    out = [put 'tan'];
+    set(str,'String',out);
 
 
 % --- Executes on button press in buttonjifen.

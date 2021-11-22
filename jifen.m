@@ -213,29 +213,30 @@ put1= get(str,'string');%将被积函数给变量shortstr
 a=str2num(get(handles.edita1,'String'));%获取自变量范围
 b=str2num(get(handles.editb1,'String'));
 
-syms x;
-%put1=strrep(put1,'x','t');
-%a=eval(u);
-put1=eval(put1)
-class(put1)
-%syms t;
-if(a<b)
-    % syms t;
-    syms x;
-put=int(put1,x,a,b)
-else
-   % syms t;
+syms x;%定义符号变量
+
+put1=eval(put1)%将字符型表达式转换为可以运算的表达式
+%class(put1)
+
+if(isempty(a)||isempty(b))
     syms x;
     put=int(put1,x)
+else
+    syms x;
+    put=int(put1,x,a,b)
 end
-cevap=findobj(gcbf,'Tag','edit6');
-%char t;
+cevap=findobj(gcbf,'Tag','edit6');%将结果输出到edit6
 out=char(put);
-%out=strrep(out,'t','x')
-%out=string(out);
 set(cevap,'String',out);    
 
-
+%put1=strrep(put1,'x','t');
+%a=eval(u);
+% syms t;
+%syms t;
+% syms t;
+%out=strrep(out,'t','x')
+%out=string(out);
+%char t;
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
@@ -251,22 +252,26 @@ c2=str2num(get(handles.editc2,'String'))
 d2=str2num(get(handles.editd2,'String'))
 
 syms x y;
-%put1=eval(put1);
+
 str1='@(x,y) ';
 put2=strcat(str1,' ',put1);
 syms x y;
 put2=eval(put2)
-%put2=str2num(put2)
-class(put2)
-out=integral2(put2,a2,b2,c2,d2)
+
+%class(put2)
+if (isempty(a2)||isempty(b2)||isempty(c2)||isempty(d2))
+    out='请输入变量范围'
+else
+    out=integral2(put2,a2,b2,c2,d2)
+end
+
 cevap=findobj(gcbf,'Tag','edit12');
 out=string(out);
-class(out)
-%out=string(out);
 set(cevap,'String',out);    
-
-
-
+%put1=eval(put1);
+%put2=str2num(put2)
+%out=string(out);
+%class(out)
 
 
 function edita2_Callback(hObject, eventdata, handles)

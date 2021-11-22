@@ -108,35 +108,31 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-cevap1=findobj(gcbf,'Tag','edit6');
+cevap1=findobj(gcbf,'Tag','edit6');%清空输出文本框
 set(cevap1,'String','');
 cevap2=findobj(gcbf,'Tag','edit4');
 set(cevap2,'String','');
+
 str=findobj(gcbf,'Tag','edit2');
 syms x y
 put1= get(str,'string')
-put1=eval(put1)
-vars=[x,y]; % 定义求解的未知量
-[solX,solY]=solve(put1,vars) % 求解eqns中的vars未知量，分别存储
-sol=solve(put1,vars); % 求解eqns中的vars未知量，以结构体的形式存储到sol中
-solX1=sol.x % 从sol结构体中取出变量u的解
-solY1=sol.y % 从sol结构体中取出变量v的解
-solX1=double(solX1)
+put1=eval(put1)                    %见Calculator.m
+vars=[x,y];                        %定义求解的未知量
+[solX,solY]=solve(put1,vars)       %求解put中的vars未知量，分别存储
+sol=solve(put1,vars);              %求解put中的vars未知量，以结构体的形式存储到sol中
+solX1=sol.x                        %从sol结构体中取出变量x的解
+solY1=sol.y                        %从sol结构体中取出变量y的解
+solX1=double(solX1)                %转换为double格式
 solY1=double(solY1)
 
-%S = solve(put1,x)
-solX1=num2str(solX1)
+solX1=num2str(solX1)               %转化为字符型
 solY1=num2str(solY1)
 out1=char(solX1)
 out2=char(solY1)
 set(cevap1,'String',out1);    
 set(cevap2,'String',out2);
 
-
-
-
-
-
+%S = solve(put1,x)
 
 function edit8_Callback(hObject, eventdata, handles)
 % hObject    handle to edit8 (see GCBO)
@@ -205,22 +201,21 @@ put2= get(str,'string')
 
 put=strcat('[',put3,',',put2,']')
 put=eval(put)
-vars=[x,y]; % 定义求解的未知量
-[solX,solY]=solve(put,vars) % 求解eqns中的vars未知量，分别存储
-sol=solve(put,vars); % 求解eqns中的vars未知量，以结构体的形式存储到sol中
-solX1=sol.x % 从sol结构体中取出变量u的解
-solY1=sol.y % 从sol结构体中取出变量v的解
+vars=[x,y];                       %定义求解的未知量
+[solX,solY]=solve(put,vars)       %求解put中的vars未知量，分别存储
+sol=solve(put,vars);              %求解put中的vars未知量，以结构体的形式存储到sol中
+solX1=sol.x                       %从sol结构体中取出变量x的解
+solY1=sol.y                       %从sol结构体中取出变量y的解
 solX1=double(solX1)
 solY1=double(solY1)
 
-%S = solve(put1,x)
 solX1=num2str(solX1)
 solY1=num2str(solY1)
 out1=char(solX1)
 out2=char(solY1)
 set(cevap1,'String',out1);    
 set(cevap2,'String',out2);
-
+%S = solve(put1,x)
 
 
 function edit5_Callback(hObject, eventdata, handles)
